@@ -1,0 +1,8 @@
+Name | Phone number
+---------------------
+Alfredo	| 123456789
+Michael	| 123456789
+Rocky	| 123456789
+Sharky	| 123456789
+Shelby	| 123456789
+Rufus	| 123456789
