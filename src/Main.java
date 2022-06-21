@@ -140,19 +140,16 @@ public class Main extends Contact {
                     List<String> newList = new ArrayList<>();
 //
                     for (String name1 : fileData) {
-                        newList.add(name1);
-//                        System.out.println(name1);
-                        if (name1.equals(name4)){
-                            newList.remove(name1);
+                        if (name1.contains(name4)){
+                            continue;
                         }
+                        newList.add(name1);
                     }
-//
+
 
                 }catch(IOException iox) {
                     iox.printStackTrace();
                 }
-
-
                 break;
 
         }
