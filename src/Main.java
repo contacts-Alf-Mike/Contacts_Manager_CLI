@@ -107,11 +107,22 @@ public class Main extends Contact {
                 }
 
                 break;
+
             case 3:
                 Scanner scanner2 = new Scanner(System.in);
                 System.out.println("Search contact by name: ");
                 String name2 = scanner2.nextLine();
+                try {
+                    List<String> fileData = Files.readAllLines(Paths.get("data", "contact.txt"));
+                    System.out.println(fileData);
 
+                    List<String> newList = new ArrayList<>();
+                    for (String name3 : fileData) {
+                        System.out.println(name3);
+                    }
+                }catch(IOException iox) {
+                    iox.printStackTrace();
+                }
 
 
 
