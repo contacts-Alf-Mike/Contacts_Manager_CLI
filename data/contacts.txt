@@ -1,8 +1,12 @@
+
 Name | Phone number
 ---------------------
-Alfredo	| 123456789
-Michael	| 123456789
-Rocky	| 123456789
-Sharky	| 123456789
-Shelby	| 123456789
-Rufus	| 123456789
+Rocky	| 222222
+alfredo	| 123343
+Shakira	| 48484848
+Sharky	| 1212121
+
+Yummy	| 1929334
+alfredo 	| 12345
+Jimmy	| 7777777
+Lola	| 393939393

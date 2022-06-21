@@ -2,14 +2,16 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-public class Main {
+public class Main extends Contact {
 
     static void menu() {
-        System.out.println("---------------------");
+//        System.out.println("---------------------");
         System.out.println("1. View contacts. ");
         System.out.println("2. Add a new contact.");
         System.out.println("3. Search a contact by name.");
@@ -35,17 +37,13 @@ public class Main {
             }
 
             List<String> dataText = new ArrayList<>();
-            dataText.add("Name | Phone number");
-            dataText.add("---------------------");
-            dataText.add("Alfredo" + "\t|" + " 123456789");
-            dataText.add("Michael" + "\t|" + " 123456789");
-            dataText.add("Rocky" + "\t|" + " 123456789");
-            dataText.add("Sharky" + "\t|" + " 123456789");
-            dataText.add("Shelby" + "\t|" + " 123456789");
-            dataText.add("Rufus" + "\t|" + " 123456789");
+//               Contact rocky = new Contact("Rocky", "222222");
+//            dataText.add("Name | Phone number");
+//            dataText.add("---------------------");
+
 
             if (Files.exists(dataFile)) {
-                Files.write(dataFile, dataText);
+                Files.write(dataFile, dataText, StandardOpenOption.APPEND);
 //                Files.write(dataFile, Array.asList("Apollo"), StandardOpenOption.APPEND);
             }
 
@@ -53,14 +51,13 @@ public class Main {
             iox.printStackTrace();
         }
 
-
         int opt;
         Scanner sc = new Scanner(System.in);
-        ArrayList<Manager> managerList = new ArrayList<Manager>();
+        ArrayList<Contact> managerList = new ArrayList<Contact>();
 //        menu();
         do{
 
-        Manager m = new Manager();
+        Contact m = new Contact();
         menu();
         opt = sc.nextInt();
         switch (opt) {
@@ -88,13 +85,36 @@ public class Main {
                 break;
             case 2:
                 Scanner scanner = new Scanner(System.in);
-                System.out.println("Enter New Contact Name");
+                System.out.println("Enter Contact Name : ");
+                String name  = scanner.nextLine();
+                System.out.println("Enter phone number: ");
+                String phone = scanner.nextLine();
 
+                Contact newContact = new Contact(name, phone);
 
+                System.out.println(newContact.getInfo());
 
+                try{
+                    Path dataDirectory = Paths.get(directory);
+                    Path dataFile = Paths.get(directory, filename);
+
+                   if(Files.exists(dataFile)) {
+                       Files.write(dataFile, Arrays.asList(newContact.getInfo()), StandardOpenOption.APPEND);
+                   }
+
+                } catch (IOException iox) {
+                    iox.printStackTrace();
+                }
 
                 break;
             case 3:
+                Scanner scanner2 = new Scanner(System.in);
+                System.out.println("Search contact by name: ");
+                String name2 = scanner2.nextLine();
+
+
+
+
                 break;
             case 4:
                 break;
@@ -102,6 +122,9 @@ public class Main {
         }
 
         }while (opt != 5);
+
+        // LIST of Contact objects
+
 //
 //        String directory = "data";
 //        String filename = "contacts.txt";
