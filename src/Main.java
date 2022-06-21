@@ -125,6 +125,27 @@ public class Main extends Contact {
                             System.out.println(name1);
                         }
                     }
+
+                }catch(IOException iox) {
+                    iox.printStackTrace();
+                }
+
+                break;
+            case 4:
+                Scanner scanner3 = new Scanner(System.in);
+                System.out.println("Enter name to delete: ");
+                String name4 = scanner3.nextLine();
+                try {
+                    List<String> fileData = Files.readAllLines(Paths.get("data", "contacts.txt"));
+                    List<String> newList = new ArrayList<>();
+//
+                    for (String name1 : fileData) {
+                        newList.add(name1);
+//                        System.out.println(name1);
+                        if (name1.equals(name4)){
+                            newList.remove(name1);
+                        }
+                    }
 //
 
                 }catch(IOException iox) {
@@ -132,9 +153,6 @@ public class Main extends Contact {
                 }
 
 
-
-                break;
-            case 4:
                 break;
 
         }
