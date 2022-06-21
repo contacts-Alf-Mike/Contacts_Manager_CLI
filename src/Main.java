@@ -144,8 +144,13 @@ public class Main extends Contact {
                             continue;
                         }
                         newList.add(name1);
-                    }
 
+                    }
+                    Files.write(Paths.get("data", "contacts.txt"), newList);
+                    fileData = Files.readAllLines(Paths.get("data", "contacts.txt"));
+                    for (String line : fileData){
+                        System.out.println(line);
+                    }
 
                 }catch(IOException iox) {
                     iox.printStackTrace();
