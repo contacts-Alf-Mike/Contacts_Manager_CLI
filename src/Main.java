@@ -37,9 +37,7 @@ public class Main extends Contact {
             }
 
             List<String> dataText = new ArrayList<>();
-//               Contact rocky = new Contact("Rocky", "222222");
-//            dataText.add("Name | Phone number");
-//            dataText.add("---------------------");
+
 
 
             if (Files.exists(dataFile)) {
