@@ -1,7 +1,6 @@
 
 Name | Phone number
 ---------------------
-Rocky	| 222222
-Shakira	| 48484848
-Sharky	| 1212121
 
+MikeD	| 5556667777
+Alfredo	| 111333344444
